@@ -35,6 +35,18 @@ export class Game extends Scene {
         this.platforms.create(50, 250, 'ground');
         this.platforms.create(750, 220, 'ground');
 
+        this.stars = this.physics.add.group({
+            //an object is a collection of properties and values
+            key: 'star',
+            repeat: 11, //it will make 12 stars(make the first star, then repeat 11 times)
+            setXY: { //creating an object within the object
+                x: 12, //these are all properties
+                y: 0,
+                stepX: 70,
+            }
+        });
+
+
         this.player = this.physics.add.sprite(100, 450, 'dude');
 
         this.player.setBounce(0.2);
